@@ -12,11 +12,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: @appl;
+    --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
@@ -24,6 +25,7 @@
 @layer base {
   * {
     @apply font-pretendard;
+    box-sizing: border-box;
   }
 
   html {
@@ -33,5 +35,38 @@
   body {
     color: var(--foreground);
     background: var(--background);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-foreground text-background rounded-[1.2rem] cursor-pointer font-medium transition-all;
+  }
+  .btn-sm {
+    @apply text-btn-sm;
+    line-height: 2.34rem;
+  }
+  .btn-md {
+    @apply text-btn-md;
+    letter-spacing: -0.02em;
+    line-height: 1.4rem;
+  }
+  .btn-lg {
+    @apply text-btn-lg;
+    line-height: 2.6rem;
+  }
+
+  .chip {
+    @apply bg-background text-background rounded-[0.8rem] cursor-pointer;
+    padding: 1.05rem 1.6rem 1.05rem 3rem;
+    line-height: 2.34rem;
+    font-size: 1.8rem;
+  }
+
+  .chip-open {
+    @apply border border-var-primary-500 text-var-primary-500;
+  }
+  .chip-close {
+    @apply border border-black border-opacity-30 text-opacity-50 text-black;
   }
 }
