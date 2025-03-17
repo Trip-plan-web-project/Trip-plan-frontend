@@ -7,6 +7,8 @@ import PostUserAction from '@/components/ui/PostUserAction';
 import shareButtonClickHandler from '@/utils/shareUtils';
 import usePostActionLike from '@/lib/hooks/queries/mutate/usePostActionLike';
 import usePostActionDibs from '@/lib/hooks/queries/mutate/usePostActionDibs';
+import useReports from '@/lib/hooks/useReports';
+import ReportModal from './ReportModal';
 
 interface UserActionSectionProps {
   accessToken: string;
@@ -15,6 +17,7 @@ interface UserActionSectionProps {
   likeId: number | null;
   bookmarkId: number | null;
   writerId: string;
+  reportData: ReportActiveType;
 }
 
 const UserActionSection = ({
@@ -24,12 +27,22 @@ const UserActionSection = ({
   bookmarkId: initialBookmarkId,
   socialId,
   writerId,
+  reportData,
 }: UserActionSectionProps) => {
   const [likeId, setLikeId] = useState<number | null>(initialLikeId);
   const [bookmarkId, setBookmarkId] = useState<number | null>(
     initialBookmarkId
   );
-
+  const {
+    openModal: open,
+    isOpen,
+    closeModal,
+    selectedPlan,
+    selectedReason,
+    submitReport,
+    toggleReason,
+    isPending,
+  } = useReports();
   const likeMutation = usePostActionLike<TPlanInfo>({
     pageType: 'plan',
     pageId: planId,
@@ -37,7 +50,9 @@ const UserActionSection = ({
     accessToken,
     setLikeId,
   });
-
+  const openModal = () => {
+    open('plan', planId);
+  };
   const dibsMutation = usePostActionDibs<TPlanInfo>({
     pageType: 'plan',
     pageId: planId,
@@ -89,7 +104,26 @@ const UserActionSection = ({
 
   return (
     <section className="flex justify-between items-center mt-[6rem] pb-[4rem] border-b border-[#D9D9D9]">
-      <PostUserAction pageType="plan" renderOptions={renderActionOptions} />
+      <PostUserAction
+        pageType="plan"
+        renderOptions={renderActionOptions}
+        openModal={openModal}
+      />
+      {isOpen && (
+        <ReportModal
+          reportsData={{ ...reportData, id: planId }}
+          reports={{
+            openModal,
+            closeModal,
+            isOpen,
+            isPending,
+            selectedPlan,
+            selectedReason,
+            toggleReason,
+            submitReport,
+          }}
+        />
+      )}
     </section>
   );
 };

@@ -84,6 +84,14 @@
     line-height: 2.6rem;
   }
 
+  .basic-text {
+    font-family: Pretendard;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18.2px;
+    letter-spacing: 0%;
+  }
+
   .chip {
     @apply bg-background text-background rounded-[0.8rem] cursor-pointer;
     padding: 0.7rem 1.6rem 0.7rem 3rem;
@@ -249,4 +257,140 @@
 }
 .react-datepicker__day-name {
   color: #ededed !important;
+}
+
+.logo {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.admin-link-text {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0%;
+}
+
+.admin-title {
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+  letter-spacing: 0%;
+}
+.admin-subtitle {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.admin-report-link {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20.8px;
+  letter-spacing: 0%;
+}
+.admin-dropdown-text {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18.2px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.admin-text {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18.2px;
+  letter-spacing: 0%;
+}
+
+.admin-table-header {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+.admin-table-content {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+.report-sub-title {
+  font-family: Pretendard;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #6b6b6b;
+}
+.report-sub-content {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #6b6b6b;
+}
+.report-content-text {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+.report-writter-text {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.divider {
+  border-left: 1px solid gray;
+  margin: 0 10px;
+  height: 20px;
+  background: #00000080;
+
+  display: inline-block;
+}
+
+.admin-report-arrow {
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.admin-report-arrow-text {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.admin-point-modal-text {
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }

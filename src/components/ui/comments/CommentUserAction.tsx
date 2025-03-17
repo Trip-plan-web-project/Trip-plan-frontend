@@ -11,6 +11,7 @@ interface CommentUserActionProps {
   postId: number;
   currentPage: number;
   setIsEdit: Dispatch<SetStateAction<boolean>>;
+  openModal: () => void;
 }
 
 const CommentUserAction = ({
@@ -21,6 +22,7 @@ const CommentUserAction = ({
   postId,
   currentPage,
   setIsEdit,
+  openModal,
 }: CommentUserActionProps) => {
   const { deleteMutation } = useMyCommentAction({
     pageType,
@@ -55,7 +57,7 @@ const CommentUserAction = ({
       {
         key: '신고하기',
         image: { src: ICONS.iconSiren.src, alt: ICONS.iconSiren.alt },
-        clickHandler: () => console.log('신고하기..'),
+        clickHandler: () => openModal(),
       },
     ],
   };

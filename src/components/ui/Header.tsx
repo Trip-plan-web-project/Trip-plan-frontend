@@ -2,6 +2,7 @@ import Link from 'next/link';
 import LogoWithText from './LogoWithText';
 import PlanSettingRouter from './header/PlanSettingRouter';
 import AuthProfile from './header/AuthProfile';
+import AdminRouter from './AdminRouter';
 
 const Header = () => {
   return (
@@ -26,8 +27,8 @@ const Header = () => {
               여행 후기
             </Link>
           </nav>
+          <AdminRouter />
         </div>
-
         <AuthProfile />
       </div>
     </header>
